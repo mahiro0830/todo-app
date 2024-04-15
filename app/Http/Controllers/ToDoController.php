@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\ToDo\StoreRequest;
+use App\Http\Requests\ToDo\UpdateRequest;
 use App\Models\ToDo;
 use Illuminate\Http\Request;
 
@@ -79,9 +80,16 @@ class ToDoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(UpdateRequest $request, $id)
     {
-        //
+        // IDに紐づくToDoモデルを取得する
+        $toDo = ToDo::find($id);
+
+        // タイトルをToDoモデルに設定する
+        $toDo->title = $request->get('title');
+
+        // DBにデータを登録する
+        $toDo->save();
     }
 
     /**
