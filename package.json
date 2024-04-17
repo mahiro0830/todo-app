@@ -29,6 +29,7 @@
         "@emotion/styled": "^11.11.5",
         "@mui/icons-material": "^5.15.15",
         "@mui/material": "^5.15.15",
+        "react-query": "^3.39.3",
         "react-router-dom": "^5.3.4"
     }
 }
