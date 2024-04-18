@@ -17,4 +17,4 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::resource('todos', ToDoController::class);
-Route::resource('todoDetails', ToDoDetailController::class);
+Route::resource('todo_details', ToDoDetailController::class);

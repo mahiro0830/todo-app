@@ -1,10 +1,10 @@
-import React from "react";
+import { React, useState } from "react";
 import { Card, TextField, CardContent, List } from "@mui/material";
 import ToDoDetail from "./ToDoDetail";
 import { useUpdateToDoMutateTask } from "../hooks/ToDo";
 
 const ToDo = (props) => {
-    const [timer, setTimer] = React.useState(null);
+    const [timer, setTimer] = useState(null);
 
     let toDo = {
         id: props.toDo.id,
@@ -39,7 +39,7 @@ const ToDo = (props) => {
                 <List>
                     {
                         props.toDo.to_do_details.map((detail) => (
-                            <ToDoDetail key={ detail } detail={ detail } />
+                            <ToDoDetail key={ detail.id } detail={ detail } />
                         ))
                     }
                 </List>
