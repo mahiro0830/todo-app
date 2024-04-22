@@ -85,6 +85,7 @@ class ToDoDetailController extends Controller
 
         // 値をToDoDetailモデルに設定する
         $toDoDetail->name = $request->get('name');
+        $toDoDetail->completed_flag = $request->get('completed_flag');
 
         // DBにデータを登録する
         $toDoDetail->save();
